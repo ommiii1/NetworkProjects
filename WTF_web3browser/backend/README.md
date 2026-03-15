@@ -1,24 +1,29 @@
-# 🌐 Web3 Browser Platform - Backend Engine
+# 🌐 Web3 Browser Platform
 
-The powerful Python-based backend server powering the Web3 Browser platform. This intelligence layer manages decentralized user identities (neural signatures), orchestrates gamified reward systems, indexes decentralized applications (dApps), and provides a secure search functionality to prevent cross-origin breaches.
+An immersive, decentralized web browser and application gateway built for the next generation of the internet. This platform is designed to promote Web3 adoption for beginners through a gamified, secure, and intuitive experience while integrating powerful features like a built-in wallet and native ad-blocking.
+
+## ▶️Demo Youtube Link
+https://youtu.be/tfX2hKEimkA?si=cyxPvtFyo0JVyq-6
 
 ## 🚀 Product Overview
-**What is your dApp about?**
-The powerful Python-based backend server powering the Web3 Browser platform. This intelligence layer manages decentralized user identities (neural signatures), orchestrates gamified reward systems, indexes decentralized applications (dApps), and provides a secure search functionality to prevent cross-origin breaches.
+**What is our dApp about?**
 
-**What problem are you solving?**
-The steep learning curve and security risks associated with Web3. Our backend acts as a protective, educational gateway that maintains the state of a user's progress, validating and issuing rewards to prevent exploitation while keeping users securely sandboxed.
+An immersive, decentralized web browser and application gateway built for the next generation of the internet. This platform promotes Web3 adoption for beginners through a gamified, secure, and intuitive experience featuring an inbuilt wallet and native ad-blocking.
+
+**What problem are we solving?**
+
+The steep learning curve, fragmentation, and security risks associated with Web3. Beginners often fall victim to phishing sites or get overwhelmed by wallet setups. We provide a safe, unified educational gateway that protects users with active threat mitigation while gamifying their learning process.
 
 ---
 
 ## 🎯 Use Case
 **Who is this product built for?**
 - Web2 users exploring Web3 for the first time.
-- Users looking to securely onboard and manage their decentralized identity.
-- Individuals looking to earn crypto rewards through onboarding quests securely.
+- Users concerned about privacy, trackers, and malicious dApps.
+- Individuals looking to earn crypto rewards through onboarding quests.
 
 **Why does this matter for users?**
-It provides a secure, trustworthy environment where users are rewarded for learning. By validating interactions server-side, it prevents malicious exploits of the reward system and ensures a fair, technically empowering, and financially self-sovereign community.
+It removes the friction from decentralized technologies. By natively rewarding users for learning security best practices and engaging with DApps, we foster a more educated, technically empowered, and financially self-sovereign community without the overwhelming complexity of traditional crypto tools.
 
 ---
 
@@ -29,28 +34,36 @@ It provides a secure, trustworthy environment where users are rewarded for learn
   <img src="screenshots/media__1773548500528.png" width="45%" alt="DApp View" />
   <img src="screenshots/media__1773548503095.png" width="45%" alt="Wallet Gateway" />
   <img src="screenshots/media__1773548507357.png" width="45%" alt="Identity Matrix" />
+  <img src="https://i.imgur.com/LN4dnU2.png" width="45%" alt="Mobile View" />
+  <img src="https://i.imgur.com/HmA8rmx.png" width="45%" alt="Mobile View2" />
 </div>
 
 ---
 
 ## 🏗️ Architecture
 **How does your product work?**
-1. **User Registration**: When a user connects their wallet on the frontend, the backend registers the address, assigning them an internal ID and initiating their points balance.
-2. **Activity Tracking**: As the user explores the decentralized web or completes "WTF Quests", the frontend pings the `/rewards/claim` endpoint. The backend processes the activity type and increments the user's score up to predefined daily caps.
-3. **Redemption Matrix**: When a user accumulates over 1,000 internal points, they can execute a redemption. The backend deducts the internal points and orchestrates the conversion to equivalent "Hela Tokens".
-4. **Search and Validation**: The backend provides suggestion endpoints and acts as an indexer.
+1. **Identity Handshake**: Users are greeted with a "Wallet Gatekeeper" modal to authenticate via their Web3 wallet. 
+2. **The Workspace**: Users gain access to a customized, desktop-like immersive interface containing DApps, Rewards, WTF Zone (Games), Education, and Security tabs.
+3. **Immersive Browsing**: The explore section acts as a search engine. When a user opens a DApp, it loads seamlessly within the browser workspace using iframe neural link technology.
+4. **Economic Engine**: As users browse and read articles, the frontend communicates with the backend to record points, which can be redeemed on-chain.
 
 **What components are involved?**
-Built with **Flask** and **SQLAlchemy**, designed as a lightweight, robust JSON API.
-- **`app.py` & `routes/`**: Main Flask application and API Endpoints (users, rewards, search).
-- **`models/`**: Database schema definitions (User profiles, Gamification logging).
-- **`services/hela_engine.py`**: Smart contract interaction handlers for the Hela Network.
+The frontend is a highly interactive Single Page Application built using **React** and **Vite**.
+- **`components/`**: Modular UI elements like the Wallet Gatekeeper, DApp Viewer, and Security Dashboards.
+- **Neural Guard**: The active security layer blocking ads and trackers on decentralized websites.
+- **Python Backend Engine**: An external service validating gamification metrics and managing the DApp directory.
+- 
+**Github Repo Links**
+  
+Frontend : https://github.com/Apoorv-sharma1/web3browser
+
+Backend : https://github.com/Apoorv-sharma1/web3browser_backend
 
 ---
 
 ## 🔗 HeLa Integration
 **How is your dApp leveraging the HeLa Network?**
-The platform integrates directly with the **Hela Network**. The backend tracks aggregate educational and browsing points locally, and handles the cryptographic logic when a user opts to sync (redeem) their points for on-chain assets. It orchestrates the distribution of the native HLUSD token directly to the user's connected wallet on the Hela Testnet.
+The platform is natively built for the **Hela Network**. The browser tracks user educational and browsing metrics as "Sync" points. When a user accumulates enough points, the frontend interacts directly with our deployed smart contract on the Hela Testnet to distribute **HLUSD** rewards to their connected wallet, showcasing the speed and efficiency of Hela transactions.
 
 ### Deployed Contract Details (Hela Testnet)
 - **Token / Contract Address**: `0xBE75FDe9DeDe700635E3dDBe7e29b5db1A76C125`
@@ -64,30 +77,27 @@ The platform integrates directly with the **Hela Network**. The backend tracks a
 
 ## 💻 Setup & Installation
 
-To run the backend locally:
+To run the frontend locally:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Apoorv-sharma1/web3browser_backend.git
-   cd web3browser_backend
+   git clone https://github.com/Apoorv-sharma1/web3browser.git
+   cd web3browser
    ```
 
-2. **Create a Virtual Environment (Recommended):**
+2. **Install Dependencies:**
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   npm install
    ```
 
-3. **Install Dependencies:**
+3. **Configure Environment:**
+   Create a `.env` file in the root directory:
+   ```env
+   VITE_API_URL=http://localhost:5000 # Or your deployed backend URL
+   ```
+
+4. **Start the Development Server:**
    ```bash
-   pip install -r requirements.txt
+   npm run dev
    ```
-
-4. **Initialize Environment Variables:**
-   Copy `.env.example` to `.env` and fill in necessary configuration fields (e.g., SECRET_KEY).
-
-5. **Start the Development Server:**
-   ```bash
-   python app.py
-   ```
-   *The API will be available at http://127.0.0.1:5000/*
+   *The application will be available at http://localhost:5173/*
